@@ -1,0 +1,12 @@
+
+
+repositories:
+  - url: https://github.com/shaninalex/repository-watcher.git
+    branch: master
+    action:
+      - deployment
+      - lint
+  - url: git@github.com:shaninalex/Lumna.git
+    branch: master
+    action:
+      - release
