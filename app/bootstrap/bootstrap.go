@@ -10,8 +10,20 @@ import (
 	"github.com/spf13/cobra"
 )
 
+type Instance struct {
+	Core *core.App
+}
+
+func (s *Instance) Close(ctx context.Context) error {
+	return nil
+}
+
+func New(ctx context.Context, cfg *config.Config) (*Instance, error) {
+	return &Instance{}, nil
+}
+
 func NewCLI() (*cobra.Command, func()) {
-	var app *core.Instance
+	var app *Instance
 	root := &cobra.Command{
 		Use:           "repo_watcher",
 		SilenceUsage:  true,
@@ -22,13 +34,15 @@ func NewCLI() (*cobra.Command, func()) {
 				return err
 			}
 
-			app, err = core.New(cmd.Context(), cfg)
+			app, err = New(cmd.Context(), cfg)
 			return err
 		},
 	}
 
+	resolve := core.Resolve(func() *core.App { return app.Core })
 	root.AddCommand(
-		cmd.NewRunWatcher(app),
+		cmd.NewRunWatcher(resolve),
+		cmd.NewSetup(resolve),
 	)
 
 	cleanup := func() {

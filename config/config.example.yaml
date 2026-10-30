@@ -8,12 +8,14 @@ providers:
 repositories:
   - url: https://github.com/shaninalex/repository-watcher.git
     branch: master
-    pull: true
-    issue: true
-    action:
-      - deployment
-      - lint
+    interval: 24h
+    targets:
+      - actions: deployment, lint
+      - pull: true
+      - issue: true
+
   - url: git@github.com:shaninalex/Lumna.git
     branch: master
-    action:
-      - release
+    interval: 5m
+    targets:
+      - actions: release

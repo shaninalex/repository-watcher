@@ -1,17 +1,13 @@
 package core
 
-import (
-	"context"
-
-	"github.com/shaninalex/repository-watcher/app/platform/config"
-)
-
-type Instance struct{}
-
-func (s *Instance) Close(ctx context.Context) error {
-	return nil
+type App struct {
+	//Commands *bus.CommandBus
+	//Events   *bus.EventBus
 }
 
-func New(ctx context.Context, cfg *config.Config) (*Instance, error) {
-	return &Instance{}, nil
+type Module interface {
+	Name() string
+	Register(a *App) error
 }
+
+type Resolve func() *App
