@@ -1,8 +1,15 @@
+providers:
+  - provider: github
+    token: <api-token>
 
+  - provider: gitlab
+    token: <api-token>
 
 repositories:
   - url: https://github.com/shaninalex/repository-watcher.git
     branch: master
+    pull: true
+    issue: true
     action:
       - deployment
       - lint

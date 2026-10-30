@@ -1,0 +1,1 @@
+Get notifications for new releases, actions states, pull requests and so on.
