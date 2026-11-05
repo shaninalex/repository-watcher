@@ -1,5 +1,5 @@
 using System.Net;
-using Watcher.Server.Core.providers.github;
+using Watcher.Server.Core.Providers.Github;
 
 namespace Watcher.Server.Tests;
 

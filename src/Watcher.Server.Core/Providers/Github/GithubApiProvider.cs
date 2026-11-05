@@ -1,7 +1,7 @@
 using System.Net;
 using System.Net.Http.Headers;
 
-namespace Watcher.Server.Core.providers.github;
+namespace Watcher.Server.Core.Providers.Github;
 
 public class GithubApiProvider
 {
@@ -12,8 +12,9 @@ public class GithubApiProvider
         Client = new HttpClient();
         Client.DefaultRequestHeaders.Add("Accept", "application/vnd.github+json");
         Client.DefaultRequestHeaders.Add("X-GitHub-Api-Version", "2026-03-10");
-        
-        string customUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36";
+
+        string customUserAgent =
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36";
         Client.DefaultRequestHeaders.Add("User-Agent", customUserAgent);
 
         if (!string.IsNullOrEmpty(githubToken))
@@ -46,8 +47,7 @@ public class GithubApiProvider
         try
         {
             Client.DefaultRequestHeaders.Accept.Clear();
-            HttpResponseMessage response =
-                await Client.GetAsync($"https://api.github.com/{url}");
+            HttpResponseMessage response = await Client.GetAsync($"https://api.github.com/{url}");
             return response.StatusCode;
         }
         catch (HttpRequestException e)
