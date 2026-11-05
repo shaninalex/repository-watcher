@@ -1,4 +1,4 @@
-name: Go
+name: Example Build
 
 on:
   push:
@@ -9,10 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Random delay (3-5 minutes)
+        run: sleep $((180 + RANDOM % 121))
+
       - uses: actions/checkout@v6
-      - name: Setup Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: '1.27.x'
+
       - name: Build
-        run: go build -v ./app/main.go
+        run: echo "build app"
