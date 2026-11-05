@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Watcher.Server.App", "src\W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Watcher.Shared", "src\Watcher.Shared\Watcher.Shared.csproj", "{D25CFB3B-ACA0-4899-87EB-E7A31518B8D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Watcher.Server.Tests", "src\Watcher.Server.Tests\Watcher.Server.Tests.csproj", "{A2936967-3EB7-4E04-978C-9A80609B29BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,7 @@ Global
 		{3E581542-E421-49E9-93F5-CF2A0EE3C356} = {8B07E92D-2DF2-4ACD-B17F-4F00AB0742A0}
 		{2BDCB428-D396-4BF4-98E3-B74A481D0AEA} = {8B07E92D-2DF2-4ACD-B17F-4F00AB0742A0}
 		{D25CFB3B-ACA0-4899-87EB-E7A31518B8D5} = {F431A000-F5EF-4DAD-9ABE-25BC610C0A5E}
+		{A2936967-3EB7-4E04-978C-9A80609B29BC} = {AE80A225-6860-4A4C-B2B8-E28B06214F12}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3E581542-E421-49E9-93F5-CF2A0EE3C356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -37,5 +40,9 @@ Global
 		{D25CFB3B-ACA0-4899-87EB-E7A31518B8D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D25CFB3B-ACA0-4899-87EB-E7A31518B8D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D25CFB3B-ACA0-4899-87EB-E7A31518B8D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2936967-3EB7-4E04-978C-9A80609B29BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2936967-3EB7-4E04-978C-9A80609B29BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2936967-3EB7-4E04-978C-9A80609B29BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2936967-3EB7-4E04-978C-9A80609B29BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
