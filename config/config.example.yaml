@@ -19,3 +19,16 @@ repositories:
     interval: 5m
     targets:
       - actions: release
+
+polling:
+  releases:
+    interval_seconds: 300
+
+  actions:
+    interval_seconds: 45
+
+  pipelines:
+    interval_seconds: 45
+
+  repository_metadata:
+    interval_seconds: 1800
